@@ -74,8 +74,10 @@ if Meteor.isClient
             setRoom name
           else
             console.log err
+        false
 
     unless window.location.href is "http://localhost:3000/speak"
+    #unless window.location.href is "http://demo123.meteor.com/speak"
       $("#leave").css "display", "inline"
       $("#copy").css "display", "inline"
       $(".clock").TimeCircles time:
@@ -91,6 +93,7 @@ if Meteor.isClient
   Template.welcome.events
     "click .get-room": ->
       Meteor.call "removeAllMessages"	
+
 
   Template.chat.messages= ->
     Messages.find({}, { sort: time: -1})
