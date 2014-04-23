@@ -60,7 +60,7 @@
       <div id="remotes"></div>
     </div>
     <div class="col-md-2 ">
-      {{> chat}}
+      {{> chatWidget}}
     </div>
   </div>
 </template>
@@ -105,24 +105,19 @@
   </div>
 </template>
 
-<template name="chat">
-  <p><button type="submit" class="btn btn-danger btn-xs pull-right" id = "clear-chat">clear</button></p>
-  <span class="chat-box">
-    {{> messages}}
-    {{> input}}
-  </span>
+<template name="chatWidget">
+  <button type="submit" class="btn btn-danger btn-xs pull-right" id = "clear-chat" >clear</button>
+  {{> chat}}
 </template>
 
-<template name = "messages">
-  <span class = 'chat-messages'>
-    {{#each messages}}
-    <p>{{message}}</p>
-    {{/each}}
-  </span>
-</template>
-
-<template name = "input">
-  <div class="form-group has-success ">
-    <input type="text" id="message" class="form-control box">
+<template name = "chat">
+  {{#each messages}}
+  <div class="">
+    {{message}}
+  </div>
+  {{/each}}
+  <div id="" class="">
+    <input type="text" id="message" class="form-control box" maxlength="255">
   </div>
 </template>
+

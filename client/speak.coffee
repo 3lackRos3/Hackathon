@@ -75,7 +75,7 @@ Template.speak.rendered = ->
 
 Template.speak.events
   "click #leave": ->
-
+    Meteor.call "removeAllMessages"	
   "click #copy": ->
     window.prompt "Share this url to anyone you want to connect:", window.location.href
 

@@ -1,7 +1,7 @@
-Template.messages.messages= ->
+Template.chat.messages= ->
   Messages.find({}, { sort: time: -1})
 
-Template.input.events
+Template.chat.events
   "keypress input": (e, t) ->
     if e.keyCode is 13 
       text = t.find "#message"
@@ -9,6 +9,6 @@ Template.input.events
       text.value = ''
 
 
-Template.chat.events
+Template.chatWidget.events
   "click #clear-chat": ->
     Meteor.call "removeAllMessages"	
