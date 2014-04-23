@@ -9,6 +9,6 @@ Template.chat.events
       text.value = ''
 
 
-Template.chatWidget.events
+Template.chat.events
   "click #clear-chat": ->
     Meteor.call "removeAllMessages"	

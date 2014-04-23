@@ -82,15 +82,19 @@ footer p{
   display: none;
   margin-top: 6px;
 }
-/*.chat-box{*/
-  /*max-height: 200px; */
-  /*overflow: auto;*/
-  /*border-top: 23px solid #772953;*/
-  /*border-left: 1px solid #772953;*/
-  /*border-right: 1px solid #772953;*/
-  /*border-bottom: 1px solid #772953;*/
-  /*border-radius: 6px;*/
-/*}*/
+.chat-box{
+  min-height: 400px; 
+  max-height: 400px;
+  overflow: auto;
+  border-top: 1px solid #772953;
+  border-left: 1px solid #772953;
+  border-right: 1px solid #772953;
+  border-bottom: 1px solid #772953;
+  border-radius: 4px;
+  padding: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 /*.box{*/
   /*border-top: 1px solid #c9d0da;*/
   /*cursor: text;*/
@@ -101,4 +105,18 @@ footer p{
   /*position: relative;*/
 /*}*/
 
-
+header{
+  /*background: #772953;*/
+  position: relative;
+  overflow: hidden;
+}
+#message{
+  border-radius: 0px;
+  position: relative;
+  border-top: 1px solid #c9d0da;
+  cursor: text;
+  max-height: 77px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 5px 49px 3px 5px;
+}
