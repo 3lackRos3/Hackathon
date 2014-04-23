@@ -1,0 +1,106 @@
+<head>
+  <title>Speak to gf</title>
+<script src="http://simplewebrtc.com/latest.js"></script> 
+</head>
+<body>
+</body>
+<template name="layout">
+  <div class="wrapper">
+    {{> navbar}}
+    {{> yield}}
+  </div>
+  {{> footer}}
+</template>
+
+<template name="welcome">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="heading col-md-12">Wanna Speak with your Girlfriend..?</h1>
+    <a href="{{pathFor "chat"}}" class="btn btn-warning btn-lg get-room" > Get a Room</a>
+  </div>
+  <div class="info well col-md-6 col-md-offset-3">
+    <ul class="text-danger">
+      <li>So you wanna speak with your Girlfriend...?</li>
+      <li>Tried Skype, Hangout, etc.. but got frustrated because of slow internet connection...?</li>
+      <li>Speak-to-gf got you covered.</li>
+      <li>No installation required.</li>
+      <li>No sign up.</li>
+      <li>No strings attached.</li>
+      <li>Simply create a chat room and share the link to get connected.</li>
+    </ul>
+  </div>
+  <div class="push"><!--//--></div>
+  <a href="https://github.com/rajanand02/speak-to-gf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+</template>
+
+<template name="chat">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 id="title">Create a chat room</h1>
+    <div class="col-md-10">
+      <p id="subTitle"> </p>
+    </div>
+    <button type="button" class="btn btn-info" id = 'copy'>copy & share</button>
+    <form id="createRoom" class="input-group create-form">
+      <input id="sessionInput" class="form-control"/>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-info">Get this room</button>
+      </span>
+    </form>
+  </div>
+  <div class="col-md-3 pull-right">
+    <div class="clock"></div>
+  </div>
+  <br />
+  <div class="col-md-12">
+    <div class="col-md-10 ">
+      <div class="col-md-4">
+        <a href="{{pathFor 'welcome'}}" id="leave" class="btn btn-danger">Leave this room</a>
+        <video id="localVideo" style="height: 250px; margin-top: 15px" oncontextmenu="return false;"></video>
+        <div id="localVolume" class="volume_bar"></div>
+      </div>
+      <div id="remotes"></div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</template>
+
+<template name="about">
+  <div class="about-list well col-md-8 col-md-offset-2">
+    <ul class="text-danger">
+      <li>Speak to gf is a WebRTC peer-to-peer chat application.</li> 
+      <li>It uses <a href="http://simplewebrtc.com/" target="_blank">SimplewebRTC library.</a></li>
+      <li>It supports Video chat with up to 8 people.</li>
+      <li>I created this app mainly to speak with my Girlfriend  but it can be used to speak with any one around the globe..:D.</li>
+      <li>Get the code <a href="http://github.com/rajanand02/speak-to-gf" target="_blank">@rajanand02.</a></li>
+    </ul>
+  </div>
+  <div class="push"></div>
+</template>
+
+
+<template name="footer">
+  <footer>
+    <div class="container">
+      <p>&#169;<a href="http://github.com/rajanand02/" target="_blank" rel="author">Raj Anand</a>. Uses <a href="http://simplewebrtc.com/" target="_blank" rel="external">Simplewebrtc</a> .</p>
+    </div>
+  </footer>
+</template>
+
+<template name="navbar">
+  <div class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{pathFor 'welcome'}}">Speak to Girlfriend</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="about"> <a href="{{pathFor 'about'}}">About</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
