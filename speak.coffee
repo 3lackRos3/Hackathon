@@ -75,16 +75,12 @@ if Meteor.isClient
           else
             console.log err
 
-        false
-
     unless window.location.href is "http://localhost:3000/speak"
       $("#leave").css "display", "inline"
       $("#copy").css "display", "inline"
       $(".clock").TimeCircles time:
         Days:
           show: false
-
-    return
 
   Template.speak.events
     "click #leave": ->
@@ -96,7 +92,6 @@ if Meteor.isClient
     "click .get-room": ->
       Meteor.call "removeAllMessages"	
 
-
   Template.chat.messages= ->
     Messages.find({}, { sort: time: -1})
 
@@ -106,7 +101,6 @@ if Meteor.isClient
         text = t.find "#message"
         Messages.insert({message: text.value})	if text.value isnt ''
         text.value = ''
-
 
   Template.chat.events
     "click #clear-chat": ->
