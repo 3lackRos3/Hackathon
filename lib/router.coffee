@@ -4,6 +4,6 @@ Router.configure
 Router.map ->
   @route 'welcome', path: '/'
 
-  @route 'chat', path: 'chat'
+  @route 'speak', path: 'speak'
 
   @route 'about', path: 'about'
